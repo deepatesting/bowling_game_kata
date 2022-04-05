@@ -78,4 +78,34 @@ public class BowlingTest {
         //Assert
         Assert.assertEquals(expectedScore, actualScore);
     }
+
+    @Test
+    public void checkForThreeRollsWithOneMiss(){
+        //Arrange
+        Bowling bowlingGame = new Bowling();
+        inputStr = "7- 8- 9-";
+
+        //Act
+        actualScore = bowlingGame.calculateScore(inputStr);
+        expectedScore = 24;
+
+        //Assert
+        Assert.assertEquals(expectedScore, actualScore);
+    }
+
+    @Test
+    public void checkForAllRollsWithOneMiss(){
+        //Arrange
+        Bowling bowlingGame = new Bowling();
+        inputStr = "9- 9- 9- 9- 9- 9- 9- 9- 9- 9-";
+
+        //Act
+        actualScore = bowlingGame.calculateScore(inputStr);
+        expectedScore = 90;
+
+        //Assert
+        Assert.assertEquals(expectedScore, actualScore);
+    }
+
+
 }

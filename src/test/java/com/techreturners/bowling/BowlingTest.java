@@ -27,11 +27,12 @@ public class BowlingTest {
     public void checkForAllRollsWithValidValues(){
         //Arrange
         Bowling bowlingGame = new Bowling();
-        inputStr = "22 33 44 36 22 11 33 54 27 90";
+        //inputStr = "22 33 44 36 22 11 33 54 27 90";
+        inputStr = "22 33";
 
         //Act
         actualScore = bowlingGame.calculateScore(inputStr);
-        expectedScore = 64;
+        expectedScore = 10;
 
         //Assert
         Assert.assertEquals(expectedScore, actualScore);

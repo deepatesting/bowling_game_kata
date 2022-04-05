@@ -10,7 +10,7 @@ public class BowlingTest {
     private int expectedScore = 0;
 
     @Test
-    public void checkForAllRollsWithOneValue(){
+    public void checkForOneRoll(){
         //Arrange
         Bowling bowlingGame = new Bowling();
         inputStr = "43";
@@ -24,15 +24,56 @@ public class BowlingTest {
     }
 
     @Test
-    public void checkForAllRollsWithValidValues(){
+    public void checkForTwoRolls(){
         //Arrange
         Bowling bowlingGame = new Bowling();
-        //inputStr = "22 33 44 36 22 11 33 54 27 90";
         inputStr = "22 33";
 
         //Act
         actualScore = bowlingGame.calculateScore(inputStr);
         expectedScore = 10;
+
+        //Assert
+        Assert.assertEquals(expectedScore, actualScore);
+    }
+
+    @Test
+    public void checkForAllRollsWithValidValues(){
+        //Arrange
+        Bowling bowlingGame = new Bowling();
+        inputStr = "23 33 44 36 22 11 33 54 27 90";
+
+        //Act
+        actualScore = bowlingGame.calculateScore(inputStr);
+        expectedScore = 67;
+
+        //Assert
+        Assert.assertEquals(expectedScore, actualScore);
+    }
+
+    @Test
+    public void checkForOneRollsWithBothMissed(){
+        //Arrange
+        Bowling bowlingGame = new Bowling();
+        inputStr = "--";
+
+        //Act
+        actualScore = bowlingGame.calculateScore(inputStr);
+        expectedScore = 0;
+
+        //Assert
+        Assert.assertEquals(expectedScore, actualScore);
+    }
+
+    @Test
+    public void checkForOneRollsWithOneMiss(){
+        //Arrange
+        Bowling bowlingGame = new Bowling();
+        inputStr = "7-";
+
+        //Act
+        actualScore = bowlingGame.calculateScore(inputStr);
+        expectedScore = 7;
 
         //Assert
         Assert.assertEquals(expectedScore, actualScore);

@@ -115,7 +115,7 @@ public class BowlingTest {
 
         //Act
         actualScore = bowlingGame.calculateScore(inputStr);
-        expectedScore = 20;
+        expectedScore = 15;
 
         //Assert
         Assert.assertEquals(expectedScore, actualScore);

@@ -107,5 +107,45 @@ public class BowlingTest {
         Assert.assertEquals(expectedScore, actualScore);
     }
 
+    @Test
+    public void checkForOneRollWithOneSpare(){
+        //Arrange
+        Bowling bowlingGame = new Bowling();
+        inputStr = "5/ 5";
 
+        //Act
+        actualScore = bowlingGame.calculateScore(inputStr);
+        expectedScore = 20;
+
+        //Assert
+        Assert.assertEquals(expectedScore, actualScore);
+    }
+
+    @Test
+    public void checkForTwoRollsWithOneSpare(){
+        //Arrange
+        Bowling bowlingGame = new Bowling();
+        inputStr = "5/ 53";
+
+        //Act
+        actualScore = bowlingGame.calculateScore(inputStr);
+        expectedScore = 23;
+
+        //Assert
+        Assert.assertEquals(expectedScore, actualScore);
+    }
+
+    @Test
+    public void checkForAllRollsWithOneSpare(){
+        //Arrange
+        Bowling bowlingGame = new Bowling();
+        inputStr = "5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5";
+
+        //Act
+        actualScore = bowlingGame.calculateScore(inputStr);
+        expectedScore = 150;
+
+        //Assert
+        Assert.assertEquals(expectedScore, actualScore);
+    }
 }

@@ -11,8 +11,12 @@ public class Bowling {
 
         for (int i = 0; i < scoreWithNoSpace.length(); i++ ) {
 
-            if (scoreWithNoSpace.charAt(i) != '-') {
-                value = scoreWithNoSpace.charAt(i);
+            value = scoreWithNoSpace.charAt(i);
+
+            if (scoreWithNoSpace.charAt(i) == '/') {
+                totalScore = totalScore + Character.getNumericValue(scoreWithNoSpace.charAt(i+1)) + 10 - Character.getNumericValue(scoreWithNoSpace.charAt(i-1));
+            }
+            else if (scoreWithNoSpace.charAt(i) != '-') {
                 totalScore = totalScore + Character.getNumericValue(value);
             }
         }

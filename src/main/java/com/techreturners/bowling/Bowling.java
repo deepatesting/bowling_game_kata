@@ -8,6 +8,7 @@ public class Bowling {
         int value = 0;
         int prevValue = 0;
         int nextValue = 0;
+        int nextSecondValue = 0;
 
         String scoreWithNoSpace = input.replaceAll("\\s","");
 
@@ -25,6 +26,18 @@ public class Bowling {
                 }
                 else {
                     totalScore += Character.getNumericValue(nextValue) + 10 - Character.getNumericValue(prevValue);
+                }
+            }
+            else if (scoreWithNoSpace.charAt(i) == 'X') {
+
+                nextValue = scoreWithNoSpace.charAt(i + 1);
+                nextSecondValue = scoreWithNoSpace.charAt(i + 2);
+
+                if( i == (scoreWithNoSpace.length()-3) ) {
+                    totalScore += 10;
+                }
+                else {
+                    totalScore += Character.getNumericValue(nextValue) + Character.getNumericValue(nextSecondValue) + 10;
                 }
             }
             else if (scoreWithNoSpace.charAt(i) != '-') {

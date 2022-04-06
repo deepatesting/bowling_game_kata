@@ -148,4 +148,50 @@ public class BowlingTest {
         //Assert
         Assert.assertEquals(expectedScore, actualScore);
     }
+
+    @Test
+    public void checkForOneRollWithOneStrike(){
+        //Arrange
+        Bowling bowlingGame = new Bowling();
+        inputStr = "X 53";
+
+        //Act
+        actualScore = bowlingGame.calculateScore(inputStr);
+        expectedScore = 18;
+
+        //Assert
+        Assert.assertEquals(expectedScore, actualScore);
+    }
+
+    @Test
+    public void checkForTwoRollWithOneStrike(){
+        //Arrange
+        Bowling bowlingGame = new Bowling();
+        inputStr = "X 36 53";
+
+        //Act
+        actualScore = bowlingGame.calculateScore(inputStr);
+        expectedScore = 36;
+
+        //Assert
+        Assert.assertEquals(expectedScore, actualScore);
+    }
+
+    /*
+
+    @Test
+    public void checkForAllRollsWithAllStrike(){
+        //Arrange
+        Bowling bowlingGame = new Bowling();
+        inputStr = "X X X X X X X X X X X X";
+
+        //Act
+        actualScore = bowlingGame.calculateScore(inputStr);
+        expectedScore = 300;
+
+        //Assert
+        Assert.assertEquals(expectedScore, actualScore);
+    }
+
+     */
 }

@@ -32,6 +32,7 @@ I continued my testing game to check for 'miss' and then added more test cases f
 I tested 'strike' with few test cases.
 Please check the commits to see how was the TDD process.
 
+Click [here] (https://htmlview.glitch.me/?https://github.com/deepatesting/bowling_game_kata/blob/master/BowlingTestResults.html) for test results.
 ---------------------------------------------------------------------------------------------------------
 
 🗒️ Technology
